@@ -145,7 +145,14 @@
       font-size: 16px;
       font-weight: 800;
       border: 1px solid var(--mz-purple);
-      transition: all 0.45s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+
+    .mz-btn:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 20px 55px rgba(255, 105, 180, 0.42), 0 0 70px rgba(170, 70, 255, 0.24);
+      background: linear-gradient(135deg, #c548d4, #ff6daa);
     }
 
     .mz-main-btn{
@@ -155,6 +162,13 @@
     background:rgba(75,31,73,0.92);
     border:1px solid rgba(255,255,255,0.65);
     box-shadow:0 18px 45px rgba(30,10,40,0.25);
+    }
+
+    .mz-main-btn:hover {
+      background: #3b1f45;
+      box-shadow: 0 20px 50px rgba(255, 158, 209, 0.5), 0 0 35px rgba(255, 158, 209, 0.3);
+      border-color: #ff9ed1;
+      transform: translateY(-6px) scale(1.04);
     }
 
     /* STAMP / LOGO SIMPLE */
@@ -196,14 +210,6 @@
     .mz-home:hover .mz-home-desc{
     transform:scale(1.035);
     text-shadow:0 0 18px rgba(255,158,209,0.35);
-    }
-
-    .mz-main-btn:hover{
-    transform:translateY(-6px) scale(1.04);
-    background:#3b1f45;
-    box-shadow:
-    0 20px 50px rgba(255,105,180,0.22),
-    0 0 35px rgba(255,158,209,0.2);
     }
 
     .mz-stamp:hover{
@@ -558,7 +564,7 @@
         Future intégratrice CMS et technicienne systèmes réseaux, je fusionne la créativité du web et la rigueur de l'infrastructure.
       </p>
 
-      <a href="#contact" class="mz-btn mz-main-btn">Devis Gratuit</a>
+      <a href="https://docs.google.com/forms/u/2/d/1l78nWLvaKpGxyDTTYIkGRCYSml0_nt_IhWsGmX9KIfM/edit" target="_blank" rel="noopener noreferrer" class="mz-btn mz-main-btn">Devis Gratuit</a>
 
     </div>
 
@@ -656,7 +662,7 @@
         Prête à relever de nouveaux défis techniques et créatifs. Discutons de votre prochain projet !
       </p>
 
-      <a href="mailto:hello@zaniha.pro" class="mz-contact-mail">
+      <a href="https://docs.google.com/forms/u/2/d/1l78nWLvaKpGxyDTTYIkGRCYSml0_nt_IhWsGmX9KIfM/edit" target="_blank" rel="noopener noreferrer" class="mz-contact-mail">
         hello@zaniha.pro
       </a>
 
@@ -664,7 +670,7 @@
         BASÉE À PARIS - DISPONIBLE EN FREELANCE
       </p>
 
-      <a href="mailto:hello@zaniha.pro" class="mz-btn mz-contact-btn">
+      <a href="https://docs.google.com/forms/u/2/d/1l78nWLvaKpGxyDTTYIkGRCYSml0_nt_IhWsGmX9KIfM/edit" target="_blank" rel="noopener noreferrer" class="mz-btn mz-contact-btn">
         Envoyer un message
       </a>
 
