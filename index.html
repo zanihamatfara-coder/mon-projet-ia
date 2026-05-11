@@ -52,81 +52,85 @@
       font-family: Arial, sans-serif;
     }
 
-    /* ACCUEIL REFINEMENT */
+    /* =========================
+       PAGE ACCUEIL PREMIUM
+    ========================= */
 
-    .mz-home {
-      min-height: 100vh;
-      padding: 130px 8%;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(242, 154, 201, 0.28), transparent 28%),
-        linear-gradient(120deg, #f7f4f8 0%, #ebe8f3 48%, #cfc8dd 100%);
+    .mz-home{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    padding:120px 8%;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at 65% 55%, rgba(245,245,255,0.95) 0%, rgba(225,225,245,0.8) 17%, rgba(92,50,96,0.45) 35%, transparent 52%),
+    linear-gradient(135deg,#4b1f49 0%,#5a315d 45%,#2a122d 100%);
     }
 
-    .mz-light {
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      width: 40vw;
-      height: 40vw;
-      background: radial-gradient(circle, rgba(247, 212, 231, 0.4) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 1;
+    /* LUMIÈRE FLOUE */
+
+    .mz-light{
+    position:absolute;
+    width:780px;
+    height:520px;
+    right:12%;
+    top:30%;
+    background:rgba(245,245,255,0.78);
+    filter:blur(45px);
+    border-radius:50%;
+    transform:rotate(-12deg);
+    opacity:0.85;
+    z-index:1;
     }
 
-    .mz-home-content {
-      max-width: 1050px;
-      position: relative;
-      z-index: 2;
+    /* CONTENU */
+
+    .mz-home-content{
+    position:relative;
+    z-index:3;
+    max-width:950px;
     }
 
-    .mz-hero-title {
-      font-size: clamp(56px, 9vw, 110px);
-      line-height: 0.85;
-      letter-spacing: -5px;
-      color: var(--mz-dark);
-      font-weight: 900;
-      margin-bottom: 34px;
-      display: flex;
-      flex-direction: column;
+    /* TITRE */
+
+    .mz-hero-title{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(64px,8vw,128px);
+    line-height:0.9;
+    letter-spacing:-4px;
+    font-weight:900;
+    color:#171a36;
+    text-transform:uppercase;
+    margin-bottom:28px;
+    transition:all 0.45s ease;
+    display: flex;
+    flex-direction: column;
     }
 
-    .mz-pink-word {
-      color: var(--mz-pink);
-      font-style: italic;
+    .mz-hero-title span{
+    display:block;
+    transition:transform 0.45s ease, text-shadow 0.45s ease;
     }
 
-    .mz-home-desc {
-      max-width: 600px;
-      font-size: clamp(17px, 1.5vw, 21px);
-      line-height: 1.7;
-      color: var(--mz-purple);
-      margin-bottom: 40px;
+    .mz-pink-word{
+    color:#ff9ed1;
     }
 
-    .mz-stamp {
-      position: absolute;
-      right: 8%;
-      bottom: 15%;
-      width: 120px;
-      height: 120px;
-      border: 1px solid var(--mz-pink);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--mz-pink);
-      transform: rotate(-15deg);
-      opacity: 0.6;
-      pointer-events: none;
+    /* TEXTE */
+
+    .mz-home-desc{
+    font-family:Arial,sans-serif;
+    font-size:clamp(16px,1.3vw,21px);
+    font-weight:800;
+    font-style:italic;
+    color:#ff9ed1;
+    max-width:880px;
+    margin-bottom:14px;
+    transition:all 0.45s ease;
     }
 
-    /* BOUTONS */
+    /* BOUTON */
 
     .mz-btn {
       display: inline-flex;
@@ -141,13 +145,72 @@
       font-size: 16px;
       font-weight: 800;
       border: 1px solid var(--mz-purple);
-      transition: 0.3s ease;
+      transition: all 0.45s ease;
     }
 
-    .mz-btn:hover {
-      transform: translateY(-4px);
-      background: #2d2135;
-      box-shadow: 0 18px 38px rgba(75, 49, 88, 0.22);
+    .mz-main-btn{
+    width:430px;
+    max-width:100%;
+    margin-top:8px;
+    background:rgba(75,31,73,0.92);
+    border:1px solid rgba(255,255,255,0.65);
+    box-shadow:0 18px 45px rgba(30,10,40,0.25);
+    }
+
+    /* STAMP / LOGO SIMPLE */
+
+    .mz-stamp{
+    position:absolute;
+    right:9%;
+    bottom:8%;
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.88);
+    border:3px solid rgba(25,20,40,0.65);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:64px;
+    font-weight:900;
+    color:#2b1430;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.28),
+    0 0 35px rgba(255,158,209,0.35);
+    z-index:4;
+    transition:all 0.45s ease;
+    }
+
+    /* EFFETS DYNAMIQUES */
+
+    .mz-home:hover .mz-hero-title{
+    transform:scale(1.025);
+    text-shadow:0 0 25px rgba(255,158,209,0.18);
+    }
+
+    .mz-home:hover .mz-hero-title span{
+    transform:translateX(6px);
+    }
+
+    .mz-home:hover .mz-home-desc{
+    transform:scale(1.035);
+    text-shadow:0 0 18px rgba(255,158,209,0.35);
+    }
+
+    .mz-main-btn:hover{
+    transform:translateY(-6px) scale(1.04);
+    background:#3b1f45;
+    box-shadow:
+    0 20px 50px rgba(255,105,180,0.22),
+    0 0 35px rgba(255,158,209,0.2);
+    }
+
+    .mz-stamp:hover{
+    transform:scale(1.08) rotate(-3deg);
+    box-shadow:
+    0 25px 70px rgba(0,0,0,0.35),
+    0 0 55px rgba(255,158,209,0.55);
     }
 
     /* À PROPOS */
@@ -335,9 +398,39 @@
         padding: 80px 6%;
       }
 
-      .mz-hero-title {
-        font-size: clamp(48px, 15vw, 76px);
-        letter-spacing: -2px;
+      .mz-home{
+      padding:100px 6%;
+      align-items:flex-start;
+      }
+
+      .mz-light{
+      width:420px;
+      height:360px;
+      right:-15%;
+      top:35%;
+      opacity:0.65;
+      }
+
+      .mz-hero-title{
+      font-size:clamp(52px,15vw,78px);
+      letter-spacing:-2px;
+      }
+
+      .mz-home-desc{
+      font-size:15px;
+      max-width:100%;
+      }
+
+      .mz-main-btn{
+      width:100%;
+      }
+
+      .mz-stamp{
+      width:120px;
+      height:120px;
+      font-size:42px;
+      right:6%;
+      bottom:7%;
       }
 
       .mz-about-content {
@@ -359,10 +452,6 @@
 
       .mz-btn {
         width: 100%;
-      }
-
-      .mz-stamp {
-        display: none;
       }
     }
   </style>
