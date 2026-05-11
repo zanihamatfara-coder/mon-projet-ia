@@ -164,59 +164,29 @@
     box-shadow:0 18px 45px rgba(30,10,40,0.25);
     }
 
-    .mz-main-btn:hover {
-      background: #3b1f45;
-      box-shadow: 0 20px 50px rgba(255, 158, 209, 0.5), 0 0 35px rgba(255, 158, 209, 0.3);
-      border-color: #ff9ed1;
-      transform: translateY(-6px) scale(1.04);
+    /* STICKER LOGO PREMIUM */
+
+    .mz-logo-stamp {
+      position: absolute;
+      right: 8%;
+      bottom: 12%;
+      width: 200px;
+      height: auto;
+      z-index: 10;
+      filter: drop-shadow(0 15px 35px rgba(242, 154, 201, 0.35));
+      animation: float 5s ease-in-out infinite;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
     }
 
-    /* STAMP / LOGO SIMPLE */
-
-    .mz-stamp{
-    position:absolute;
-    right:9%;
-    bottom:8%;
-    width:190px;
-    height:190px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.88);
-    border:3px solid rgba(25,20,40,0.65);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:64px;
-    font-weight:900;
-    color:#2b1430;
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.28),
-    0 0 35px rgba(255,158,209,0.35);
-    z-index:4;
-    transition:all 0.45s ease;
+    .mz-logo-stamp:hover {
+      transform: scale(1.1) rotate(5deg);
+      filter: drop-shadow(0 20px 50px rgba(242, 154, 201, 0.5));
     }
 
-    /* EFFETS DYNAMIQUES */
-
-    .mz-home:hover .mz-hero-title{
-    transform:scale(1.025);
-    text-shadow:0 0 25px rgba(255,158,209,0.18);
-    }
-
-    .mz-home:hover .mz-hero-title span{
-    transform:translateX(6px);
-    }
-
-    .mz-home:hover .mz-home-desc{
-    transform:scale(1.035);
-    text-shadow:0 0 18px rgba(255,158,209,0.35);
-    }
-
-    .mz-stamp:hover{
-    transform:scale(1.08) rotate(-3deg);
-    box-shadow:
-    0 25px 70px rgba(0,0,0,0.35),
-    0 0 55px rgba(255,158,209,0.55);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
 
     /* À PROPOS */
@@ -495,10 +465,8 @@
       width:100%;
       }
 
-      .mz-stamp{
+      .mz-logo-stamp{
       width:120px;
-      height:120px;
-      font-size:42px;
       right:6%;
       bottom:7%;
       }
@@ -568,9 +536,7 @@
 
     </div>
 
-    <div class="mz-stamp">
-      MZ
-    </div>
+    <img src="logo_mz.png" alt="Logo MZ Design" class="mz-logo-stamp">
 
   </section>
 
@@ -662,7 +628,7 @@
         Prête à relever de nouveaux défis techniques et créatifs. Discutons de votre prochain projet !
       </p>
 
-      <a href="https://docs.google.com/forms/u/2/d/1l78nWLvaKpGxyDTTYIkGRCYSml0_nt_IhWsGmX9KIfM/edit" target="_blank" rel="noopener noreferrer" class="mz-contact-mail">
+      <a href="mailto:hello@zaniha.pro" class="mz-contact-mail">
         hello@zaniha.pro
       </a>
 
