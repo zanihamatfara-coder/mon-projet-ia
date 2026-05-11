@@ -52,53 +52,78 @@
       font-family: Arial, sans-serif;
     }
 
-    /* ACCUEIL */
+    /* ACCUEIL REFINEMENT */
 
     .mz-home {
       min-height: 100vh;
       padding: 130px 8%;
       display: flex;
       align-items: center;
+      position: relative;
       background:
         radial-gradient(circle at 85% 20%, rgba(242, 154, 201, 0.28), transparent 28%),
         linear-gradient(120deg, #f7f4f8 0%, #ebe8f3 48%, #cfc8dd 100%);
     }
 
+    .mz-light {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(247, 212, 231, 0.4) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
     .mz-home-content {
       max-width: 1050px;
+      position: relative;
+      z-index: 2;
     }
 
-    .mz-label {
-      display: inline-block;
-      font-size: 13px;
-      letter-spacing: 4px;
-      font-weight: 800;
-      color: var(--mz-pink);
-      margin-bottom: 26px;
-      text-transform: uppercase;
-    }
-
-    .mz-home h1 {
-      font-size: clamp(56px, 9vw, 126px);
-      line-height: 0.9;
-      letter-spacing: -4px;
+    .mz-hero-title {
+      font-size: clamp(56px, 9vw, 110px);
+      line-height: 0.85;
+      letter-spacing: -5px;
       color: var(--mz-dark);
-      max-width: 950px;
+      font-weight: 900;
       margin-bottom: 34px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mz-pink-word {
+      color: var(--mz-pink);
+      font-style: italic;
     }
 
     .mz-home-desc {
-      max-width: 690px;
-      font-size: clamp(17px, 1.5vw, 22px);
-      line-height: 1.8;
+      max-width: 600px;
+      font-size: clamp(17px, 1.5vw, 21px);
+      line-height: 1.7;
       color: var(--mz-purple);
       margin-bottom: 40px;
     }
 
-    .mz-actions {
+    .mz-stamp {
+      position: absolute;
+      right: 8%;
+      bottom: 15%;
+      width: 120px;
+      height: 120px;
+      border: 1px solid var(--mz-pink);
+      border-radius: 50%;
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--mz-pink);
+      transform: rotate(-15deg);
+      opacity: 0.6;
+      pointer-events: none;
     }
 
     /* BOUTONS */
@@ -123,11 +148,6 @@
       transform: translateY(-4px);
       background: #2d2135;
       box-shadow: 0 18px 38px rgba(75, 49, 88, 0.22);
-    }
-
-    .mz-btn-light {
-      background: transparent;
-      color: var(--mz-purple) !important;
     }
 
     /* À PROPOS */
@@ -315,8 +335,8 @@
         padding: 80px 6%;
       }
 
-      .mz-home h1 {
-        font-size: clamp(48px, 17vw, 76px);
+      .mz-hero-title {
+        font-size: clamp(48px, 15vw, 76px);
         letter-spacing: -2px;
       }
 
@@ -340,6 +360,10 @@
       .mz-btn {
         width: 100%;
       }
+
+      .mz-stamp {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -347,24 +371,29 @@
 <body>
 
   <section class="mz-home" id="home">
-    <div class="mz-home-content">
-      <p class="mz-label">MZ DESIGN</p>
 
-      <h1>
-        Design web<br>
-        élégant pour<br>
-        marques ambitieuses
+    <div class="mz-light"></div>
+
+    <div class="mz-home-content">
+
+      <h1 class="mz-hero-title">
+        <span>STRATÉGIE</span>
+        <span class="mz-pink-word">DESIGN</span>
+        <span>& EXCELLENCE</span>
       </h1>
 
       <p class="mz-home-desc">
-        Création de sites vitrines modernes, doux et professionnels pour donner à ton projet une présence claire et mémorable.
+        Future intégratrice CMS et technicienne systèmes réseaux, je fusionne la créativité du web et la rigueur de l'infrastructure.
       </p>
 
-      <div class="mz-actions">
-        <a href="#contact" class="mz-btn">Demander un devis</a>
-        <a href="#projets" class="mz-btn mz-btn-light">Voir mes projets</a>
-      </div>
+      <a href="#contact" class="mz-btn mz-main-btn">Devis Gratuit</a>
+
     </div>
+
+    <div class="mz-stamp">
+      MZ
+    </div>
+
   </section>
 
   <section class="mz-about" id="about">
