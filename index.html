@@ -130,7 +130,7 @@
     transition:all 0.45s ease;
     }
 
-    /* BOUTON */
+    /* BOUTONS */
 
     .mz-btn {
       display: inline-flex;
@@ -354,29 +354,93 @@
       text-transform: uppercase;
     }
 
-    /* CONTACT */
+    /* =========================
+       CONTACT PREMIUM
+    ========================= */
 
-    .mz-contact {
-      padding: 120px 8%;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(242, 154, 201, 0.30), transparent 30%),
-        linear-gradient(135deg, #2f2438 0%, #5b4765 48%, #d9d3e6 100%);
+    .mz-contact{
+    min-height:100vh;
+    padding:120px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    radial-gradient(circle at 20% 80%, rgba(255,105,180,0.16), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(170,70,255,0.14), transparent 35%),
+    linear-gradient(135deg,#1a0b1f 0%,#351739 48%,#120914 100%);
+    overflow:hidden;
     }
 
-    .mz-contact-card {
-      max-width: 1000px;
-      padding: 75px;
-      border-radius: 38px;
-      background: rgba(255, 255, 255, 0.84);
-      box-shadow: 0 35px 90px rgba(37, 21, 41, 0.26);
+    .mz-contact-content{
+    max-width:1000px;
+    transition:all 0.45s ease;
     }
 
-    .mz-contact-card p {
-      max-width: 700px;
-      font-size: clamp(17px, 1.5vw, 21px);
-      line-height: 1.8;
-      color: var(--mz-purple);
-      margin-bottom: 38px;
+    .mz-contact h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(58px,7vw,110px);
+    color:#d84fb8;
+    margin-bottom:80px;
+    line-height:1;
+    transition:all 0.45s ease;
+    }
+
+    .mz-contact-text{
+    font-family:Arial,sans-serif;
+    font-size:clamp(17px,1.4vw,23px);
+    font-weight:700;
+    color:rgba(255,255,255,0.62);
+    margin-bottom:60px;
+    transition:all 0.45s ease;
+    }
+
+    .mz-contact-mail{
+    display:block;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(42px,5vw,74px);
+    font-weight:900;
+    text-decoration:none;
+    color:#e35abb;
+    margin-bottom:34px;
+    transition:all 0.45s ease;
+    }
+
+    .mz-contact-location{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:6px;
+    color:#ff8fc9;
+    margin-bottom:70px;
+    transition:all 0.45s ease;
+    }
+
+    .mz-contact-btn{
+    background:linear-gradient(135deg,#b83fc0,#ff6daa);
+    border:none;
+    box-shadow:
+    0 15px 40px rgba(255,105,180,0.28),
+    0 0 45px rgba(170,70,255,0.16);
+    }
+
+    /* HOVER CONTACT */
+
+    .mz-contact:hover h2{
+    transform:scale(1.04);
+    text-shadow:0 0 30px rgba(255,105,180,0.3);
+    }
+
+    .mz-contact:hover .mz-contact-mail{
+    transform:scale(1.035);
+    text-shadow:0 0 35px rgba(255,105,180,0.35);
+    }
+
+    .mz-contact-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:
+    0 20px 55px rgba(255,105,180,0.42),
+    0 0 70px rgba(170,70,255,0.24);
     }
 
     footer {
@@ -446,8 +510,27 @@
         padding: 34px;
       }
 
-      .mz-contact-card {
-        padding: 42px 26px;
+      .mz-contact{
+      padding:90px 6%;
+      min-height:auto;
+      }
+
+      .mz-contact h2{
+      margin-bottom:45px;
+      }
+
+      .mz-contact-text{
+      margin-bottom:45px;
+      }
+
+      .mz-contact-location{
+      letter-spacing:3px;
+      line-height:1.8;
+      margin-bottom:50px;
+      }
+
+      .mz-contact-btn{
+      width:100%;
       }
 
       .mz-btn {
@@ -564,17 +647,29 @@
   </section>
 
   <section class="mz-contact" id="contact">
-    <div class="mz-contact-card">
-      <p class="mz-label">CONTACT</p>
 
-      <h2>Tu veux un site qui te ressemble ?</h2>
+    <div class="mz-contact-content">
 
-      <p>
-        Explique-moi ton projet, ton univers et ce que tu veux transmettre.
+      <h2>Contact</h2>
+
+      <p class="mz-contact-text">
+        Prête à relever de nouveaux défis techniques et créatifs. Discutons de votre prochain projet !
       </p>
 
-      <a href="mailto:hello@zaniha.pro" class="mz-btn">Envoyer un mail</a>
+      <a href="mailto:hello@zaniha.pro" class="mz-contact-mail">
+        hello@zaniha.pro
+      </a>
+
+      <p class="mz-contact-location">
+        BASÉE À PARIS - DISPONIBLE EN FREELANCE
+      </p>
+
+      <a href="mailto:hello@zaniha.pro" class="mz-btn mz-contact-btn">
+        Envoyer un message
+      </a>
+
     </div>
+
   </section>
 
   <footer>
