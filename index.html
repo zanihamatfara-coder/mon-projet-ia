@@ -16,6 +16,11 @@
       --mz-pink-soft: #f7d4e7;
       --mz-white: rgba(255, 255, 255, 0.78);
       --mz-shadow: 0 28px 70px rgba(75, 49, 88, 0.12);
+      
+      /* Glassmorphism Dark Theme */
+      --glass-bg: rgba(31, 34, 60, 0.65);
+      --glass-border: rgba(242, 154, 201, 0.25);
+      --neon-glow: 0 0 25px rgba(242, 154, 201, 0.35);
     }
 
     * {
@@ -116,7 +121,7 @@
       font-size: 16px;
       font-weight: 800;
       border: 1px solid var(--mz-purple);
-      transition: 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .mz-btn:hover {
@@ -176,55 +181,92 @@
       font-size: 14px;
     }
 
-    /* SECTIONS */
+    /* SECTIONS MODERN GLASSMORPHISM */
 
     .mz-section {
       padding: 120px 8%;
-      background: #f7f4f8;
+      position: relative;
+    }
+
+    #competences, #projets {
+      background: linear-gradient(135deg, #1f223c 0%, #4b3158 100%);
+      color: #fff;
+    }
+
+    #competences h2, #projets h2 {
+      color: #fff;
     }
 
     .mz-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
     }
 
     .mz-card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(75, 49, 88, 0.1);
-      border-radius: 32px;
-      padding: 42px;
-      min-height: 250px;
-      box-shadow: var(--mz-shadow);
-      transition: 0.35s ease;
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      border-radius: 35px;
+      padding: 45px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .mz-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+      );
+      transition: 0.5s;
+    }
+
+    .mz-card:hover::before {
+      left: 100%;
     }
 
     .mz-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 32px 80px rgba(75, 49, 88, 0.16);
+      transform: translateY(-12px) scale(1.03);
+      border-color: var(--mz-pink);
+      box-shadow: var(--neon-glow);
     }
 
     .mz-card h3 {
-      font-size: 32px;
+      font-size: 34px;
       line-height: 1.1;
-      color: var(--mz-dark);
-      margin-bottom: 24px;
+      color: #fff;
+      margin-bottom: 25px;
+      font-family: Georgia, serif;
     }
 
     .mz-card p {
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--mz-purple);
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: Arial, sans-serif;
     }
 
     .mz-project span {
       display: inline-block;
       color: var(--mz-pink);
       font-family: Arial, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 900;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(242, 154, 201, 0.3);
     }
 
     /* CONTACT */
@@ -253,26 +295,27 @@
     }
 
     footer {
-      padding: 35px 8%;
+      padding: 45px 8%;
       background: #f7f4f8;
       color: var(--mz-purple);
       text-align: center;
       font-family: Arial, sans-serif;
-      font-size: 14px;
+      font-size: 15px;
+      border-top: 1px solid rgba(75, 49, 88, 0.05);
     }
 
-    /* MOBILE */
+    /* MOBILE OPTIMIZATION */
 
     @media screen and (max-width: 900px) {
       .mz-home,
       .mz-about,
       .mz-section,
       .mz-contact {
-        padding: 80px 6%;
+        padding: 90px 7%;
       }
 
       .mz-home h1 {
-        font-size: clamp(48px, 17vw, 76px);
+        font-size: clamp(44px, 15vw, 70px);
         letter-spacing: -2px;
       }
 
@@ -282,15 +325,21 @@
 
       .mz-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
       }
 
       .mz-card {
         min-height: auto;
-        padding: 34px;
+        padding: 40px 30px;
+        border-radius: 28px;
+      }
+
+      .mz-card h3 {
+        font-size: 28px;
       }
 
       .mz-contact-card {
-        padding: 42px 26px;
+        padding: 50px 30px;
       }
 
       .mz-btn {
@@ -351,17 +400,17 @@
     <div class="mz-grid">
       <div class="mz-card">
         <h3>Site vitrine</h3>
-        <p>Une présence en ligne propre, élégante et adaptée à ton activité.</p>
+        <p>Une présence en ligne propre, élégante et adaptée à ton activité pour maximiser votre impact digital.</p>
       </div>
 
       <div class="mz-card">
         <h3>Design web</h3>
-        <p>Une mise en page harmonieuse, moderne et facile à parcourir.</p>
+        <p>Une mise en page harmonieuse, moderne et facile à parcourir, centrée sur l'expérience utilisateur premium.</p>
       </div>
 
       <div class="mz-card">
         <h3>Structure & contenu</h3>
-        <p>Des textes et sections pensés pour être clairs, rassurants et efficaces.</p>
+        <p>Des textes et sections pensés pour être clairs, rassurants et hautement efficaces pour vos conversions.</p>
       </div>
     </div>
   </section>
@@ -369,25 +418,31 @@
   <section class="mz-section" id="projets">
     <p class="mz-label">PROJETS</p>
 
-    <h2>Quelques réalisations</h2>
+    <h2>Réalisations d'exception</h2>
 
     <div class="mz-grid">
       <div class="mz-card mz-project">
         <span>01</span>
         <h3>Portfolio créatif</h3>
-        <p>Un univers élégant pour présenter une personnalité, un parcours et des compétences.</p>
+        <p>Un univers élégant pour présenter une personnalité, un parcours et des compétences avec une touche artistique.</p>
       </div>
 
       <div class="mz-card mz-project">
         <span>02</span>
         <h3>Site marque beauté</h3>
-        <p>Une page douce et professionnelle pour inspirer confiance dès la première visite.</p>
+        <p>Une interface fluide et professionnelle pour inspirer confiance et sérénité dès la première interaction.</p>
       </div>
 
       <div class="mz-card mz-project">
         <span>03</span>
         <h3>Landing page</h3>
-        <p>Une page simple et directe pour présenter une offre ou recevoir des demandes.</p>
+        <p>Une page de conversion haute performance, alliant esthétique épurée et efficacité commerciale.</p>
+      </div>
+      
+      <div class="mz-card mz-project">
+        <span>04</span>
+        <h3>Développement App iOS</h3>
+        <p>Conception d'applications mobiles intuitives et élégantes développées nativement avec Swift pour une performance optimale.</p>
       </div>
     </div>
   </section>
@@ -399,7 +454,7 @@
       <h2>Tu veux un site qui te ressemble ?</h2>
 
       <p>
-        Explique-moi ton projet, ton univers et ce que tu veux transmettre.
+        Explique-moi ton projet, ton univers et ce que tu veux transmettre. Ensemble, créons l'excellence.
       </p>
 
       <a href="mailto:hello@zaniha.pro" class="mz-btn">Envoyer un mail</a>
@@ -407,7 +462,7 @@
   </section>
 
   <footer>
-    &copy; 2026 MZ DESIGN. Tous droits réservés.
+    &copy; 2026 MZ DESIGN. Studio Digital de Luxe. Tous droits réservés.
   </footer>
 
 </body>
