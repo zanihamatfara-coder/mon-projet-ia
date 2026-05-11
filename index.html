@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaniha Matfara | Intégratrice CMS & Technicienne Systèmes Réseaux</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary-pink: #fce4ec;
+            --accent-pink: #ff80ab;
+            --primary-purple: #f3e5f5;
+            --accent-purple: #9c27b0;
+            --gradient-main: linear-gradient(135deg, #9c27b0 0%, #ff80ab 100%);
+            --dark: #0a0a0b;
+            --light: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(255, 255, 255, 0.07);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Background Evolution Animation - Refined */
+        .bg-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 30%, #1a0b1a 0%, #0a0a0b 100%);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(120px);
+            border-radius: 50%;
+            opacity: 0.25;
+            animation: move 30s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+        }
+
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent-pink);
+            top: -200px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 700px;
+            height: 700px;
+            background: var(--accent-purple);
+            bottom: -250px;
+            left: -150px;
+            animation-duration: 40s;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 100px) scale(1.2); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 900px;
+            padding: 20px 40px;
+            background: rgba(10, 10, 11, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light);
+            text-shadow: 0 0 10px rgba(255, 128, 171, 0.5);
+        }
+
+        /* Section Titles - More Elegant */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 70px;
+            text-align: center;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glass Cards - Refined */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px;
+            width: 100%;
+            margin-bottom: 30px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            background: var(--glass-hover);
+            border-color: rgba(255, 128, 171, 0.2);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Hero Updates */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 20px 20px;
+        }
+
+        .hero-tagline {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            color: var(--accent-pink);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 12vw, 6.5rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 18px 50px;
+            background: var(--gradient-main);
+            border: none;
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(156, 39, 176, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .btn-pastel {
+            background: var(--primary-pink);
+            color: var(--dark);
+            box-shadow: 0 10px 20px rgba(255, 128, 171, 0.15);
+            margin-bottom: 30px;
+        }
+
+        .btn-pastel:hover {
+            background: #fce4ec;
+            filter: brightness(0.95);
+            box-shadow: 0 12px 25px rgba(255, 128, 171, 0.25);
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .skill-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--light);
+            margin: 0;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .skill-icon-main {
+            color: var(--accent-pink);
+            width: 35px;
+            height: 35px;
+            filter: drop-shadow(0 0 10px rgba(255, 128, 171, 0.5));
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list li::before {
+            content: '✧';
+            color: var(--accent-pink);
+            font-size: 0.8rem;
+        }
+
+        /* Projects - Premium Look */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        .project-card {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .project-img {
+            height: 250px;
+            background: linear-gradient(135deg, #1a0b1a, #0a0a0b);
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 3rem;
+            letter-spacing: 10px;
+        }
+
+        .project-info {
+            padding: 30px;
+        }
+
+        .project-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--accent-pink);
+        }
+
+        /* Contact Details */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-link {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Animation class for scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 3rem; }
+            .section-title { font-size: 2.5rem; }
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid var(--glass-border);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav>
+        <div class="logo">ZANIHA MATFARA</div>
+        <div class="nav-links">
+            <a href="#home">Accueil</a>
+            <a href="#about">À Propos</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+            <p class="hero-tagline">Construire le futur</p>
+            <h1>L'<span class="evolution-text" style="color: var(--accent-pink);">Évolution</span> par le Design & le Réseau</h1>
+            <a href="#projects" class="btn btn-pastel">Voir mes projets</a>
+            <p class="hero-desc">Future intégratrice CMS et technicienne systèmes réseaux, je fusionne la créativité du web et la rigueur de l'infrastructure.</p>
+            <div class="hero-btn-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScYRVezHjzJE4eEJMgB4W223seTm-Ty7G2GMcO-cZD8SdMvjw/viewform?usp=header" target="_blank" class="btn">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <h2 class="section-title">À Propos</h2>
+        <div class="glass-card">
+            <p>Passionnée par les technologies numériques et leur transformation constante, j'ai choisi de me spécialiser dans deux piliers essentiels du web moderne : l'interface et l'infrastructure.</p>
+            <br>
+            <p>Mon parcours est guidé par un mot d'ordre : <strong>l'évolution</strong>. Qu'il s'agisse de déployer un CMS fluide ou d'optimiser la performance d'un réseau, je cherche toujours l'excellence et l'innovation.</p>
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScYRVezHjzJE4eEJMgB4W223seTm-Ty7G2GMcO-cZD8SdMvjw/viewform?usp=header" target="_blank" class="btn">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="skills-container">
+            <div class="glass-card skill-item">
+                <div class="skill-header">
+                    <i data-lucide="layout-template" class="skill-icon-main"></i>
+                    <h3>Intégration CMS</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>WordPress Expert (Elementor)</li>
+                    <li>Personnalisation de thèmes</li>
+                    <li>SEO & Web Performance</li>
+                    <li>Responsive Design & UX</li>
+                </ul>
+            </div>
+            <div class="glass-card skill-item">
+                <div class="skill-header">
+                    <i data-lucide="network" class="skill-icon-main"></i>
+                    <h3>Systèmes & Réseaux</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Administration Windows/Linux</li>
+                    <li>Configuration Cisco & Mikrotik</li>
+                    <li>Sécurité & Pare-feu</li>
+                    <li>Virtualisation & Cloud</li>
+                </ul>
+            </div>
+            <div class="glass-card skill-item">
+                <div class="skill-header">
+                    <i data-lucide="wrench" class="skill-icon-main"></i>
+                    <h3>Outils & Évolution</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Git & Gestion de version</li>
+                    <li>Suite Adobe & Figma</li>
+                    <li>Méthodes Agiles</li>
+                    <li>Veille technologique active</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2 class="section-title">Projets</h2>
+        <div class="projects-grid">
+            <div class="glass-card project-card">
+                <div class="project-img">DESIGN</div>
+                <div class="project-info">
+                    <h3>Portfolio Créatif</h3>
+                    <p>Développement d'une identité visuelle moderne pour freelance avec intégration CMS sur mesure.</p>
+                </div>
+            </div>
+            <div class="glass-card project-card">
+                <div class="project-img">SYSADMIN</div>
+                <div class="project-info">
+                    <h3>Audit Infrastructure</h3>
+                    <p>Analyse et sécurisation d'un parc informatique PME avec mise en place de VPN sécurisés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2 class="section-title">Contact</h2>
+        <div class="glass-card contact-content">
+            <p style="margin-bottom: 40px; font-size: 1.1rem; color: rgba(255, 255, 255, 0.6);">Prête à relever de nouveaux défis techniques et créatifs. Discutons de votre prochain projet !</p>
+            <div class="contact-info">
+                <a href="mailto:contact@zaniha.fr" class="contact-link">hello@zaniha.pro</a>
+                <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; color: var(--accent-pink);">Basée à Paris - Disponible en Freelance</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScYRVezHjzJE4eEJMgB4W223seTm-Ty7G2GMcO-cZD8SdMvjw/viewform?usp=header" target="_blank" class="btn" style="margin-top: 50px;">Envoyer un message</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ZANIHA MATFARA. Conçu pour l'Excellence.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Smooth Hover Effect for Glass Cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                let x = e.pageX - card.offsetLeft;
+                let y = e.pageY - card.offsetTop;
+            });
+        });
+
+        // Navigation Highlight
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                if (a.getAttribute('href').includes(current)) {
+                    a.style.color = 'var(--accent-pink)';
+                } else {
+                    a.style.color = 'rgba(255, 255, 255, 0.7)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
