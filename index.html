@@ -164,75 +164,94 @@
     box-shadow:0 18px 45px rgba(30,10,40,0.25);
     }
 
-    /* STICKER LOGO PREMIUM */
-
-    .mz-logo-stamp {
-      position: absolute;
-      right: 8%;
-      bottom: 12%;
-      width: 200px;
-      height: auto;
-      z-index: 10;
-      filter: drop-shadow(0 15px 35px rgba(242, 154, 201, 0.35));
-      animation: float 5s ease-in-out infinite;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      cursor: pointer;
+    .mz-main-btn:hover {
+      background: #3b1f45;
+      box-shadow: 0 20px 50px rgba(255, 158, 209, 0.5), 0 0 35px rgba(255, 158, 209, 0.3);
+      border-color: #ff9ed1;
+      transform: translateY(-6px) scale(1.04);
     }
 
-    .mz-logo-stamp:hover {
-      transform: scale(1.1) rotate(5deg);
-      filter: drop-shadow(0 20px 50px rgba(242, 154, 201, 0.5));
-    }
+    /* =========================
+       À PROPOS PREMIUM
+    ========================= */
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    /* À PROPOS */
-
-    .mz-about {
+    #about {
+      background: linear-gradient(135deg, #120914 0%, #1f1126 100%);
+      color: #fff;
       padding: 120px 8%;
-      background:
-        linear-gradient(135deg, #f4f1f8 0%, #ddd7e7 55%, #8b7a97 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .mz-about-content {
-      max-width: 980px;
-      margin-left: auto;
+    .mz-about-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 140, 210, 0.2);
+      border-radius: 45px;
+      padding: 70px;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      z-index: 2;
     }
 
-    .mz-about h2,
-    .mz-section h2,
-    .mz-contact h2 {
-      font-size: clamp(42px, 6vw, 88px);
-      line-height: 0.98;
+    .mz-about-card:hover {
+      transform: translateY(-12px);
+      border-color: rgba(255, 140, 210, 0.5);
+      box-shadow: 0 50px 120px rgba(255, 105, 180, 0.15);
+    }
+
+    .mz-about-glow-line {
+      width: 80px;
+      height: 3px;
+      background: var(--mz-pink);
+      margin-bottom: 45px;
+      box-shadow: 0 0 20px var(--mz-pink);
+      border-radius: 10px;
+    }
+
+    .mz-about-title {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 1;
       letter-spacing: -3px;
-      color: var(--mz-dark);
-      margin-bottom: 34px;
+      margin-bottom: 40px;
+      color: #fff;
     }
 
-    .mz-about p {
-      max-width: 850px;
-      font-size: clamp(17px, 1.5vw, 22px);
-      line-height: 1.85;
-      color: var(--mz-purple);
+    .mz-about-text {
+      font-family: Arial, sans-serif;
+      font-size: clamp(17px, 1.4vw, 22px);
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 900px;
     }
 
     .mz-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 38px;
+      margin-top: 45px;
     }
 
     .mz-tags span {
-      padding: 11px 18px;
+      padding: 12px 22px;
       border-radius: 999px;
-      background: var(--mz-pink-soft);
-      color: var(--mz-purple);
+      background: rgba(242, 154, 201, 0.15);
+      color: #ff9ed1;
       font-weight: 800;
       font-size: 14px;
+      border: 1px solid rgba(242, 154, 201, 0.3);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    .mz-tags span:hover {
+      background: rgba(242, 154, 201, 0.25);
+      transform: scale(1.05);
     }
 
     /* =========================
@@ -465,14 +484,14 @@
       width:100%;
       }
 
-      .mz-logo-stamp{
-      width:120px;
-      right:6%;
-      bottom:7%;
+      .mz-about-card {
+        padding: 40px 25px;
+        border-radius: 30px;
       }
 
-      .mz-about-content {
-        margin-left: 0;
+      .mz-about-title {
+        font-size: 38px;
+        margin-bottom: 25px;
       }
 
       .mz-grid {
@@ -536,26 +555,26 @@
 
     </div>
 
-    <img src="./logo_mz.png" alt="Logo MZ Design" class="mz-logo-stamp">
-
   </section>
 
   <section class="mz-about" id="about">
-    <div class="mz-about-content">
-      <p class="mz-label">À PROPOS</p>
+    <div class="mz-about-card">
+      <div class="mz-about-glow-line"></div>
+      
+      <h2 class="mz-about-title">Une vision créative, claire et stratégique.</h2>
 
-      <h2>Une vision créative, claire et stratégique.</h2>
+      <div class="mz-about-content">
+        <p class="mz-about-text">
+          Je crée des univers web modernes qui mélangent esthétique, structure et intention. 
+          Chaque page est pensée pour mettre en valeur une marque, rassurer ses visiteurs et rendre l’expérience fluide.
+        </p>
 
-      <p>
-        Je crée des univers web modernes qui mélangent esthétique, structure et intention.
-        Chaque page est pensée pour mettre en valeur une marque, rassurer ses visiteurs et rendre l’expérience fluide.
-      </p>
-
-      <div class="mz-tags">
-        <span>Sites vitrines</span>
-        <span>Identité visuelle</span>
-        <span>Design responsive</span>
-        <span>Stratégie digitale</span>
+        <div class="mz-tags">
+          <span>Sites vitrines</span>
+          <span>Identité visuelle</span>
+          <span>Design responsive</span>
+          <span>Stratégie digitale</span>
+        </div>
       </div>
     </div>
   </section>
@@ -628,12 +647,12 @@
         Prête à relever de nouveaux défis techniques et créatifs. Discutons de votre prochain projet !
       </p>
 
-      <a href="mailto:hello@zaniha.pro" class="mz-contact-mail">
-        hello@zaniha.pro
+      <a href="mailto:matfara@hellozanihapro.com" class="mz-contact-mail">
+        matfara@hellozanihapro.com
       </a>
 
       <p class="mz-contact-location">
-        BASÉE À PARIS - DISPONIBLE EN FREELANCE
+        BASÉE À LYON - DISPONIBLE EN FREELANCE
       </p>
 
       <a href="https://docs.google.com/forms/u/2/d/1l78nWLvaKpGxyDTTYIkGRCYSml0_nt_IhWsGmX9KIfM/edit" target="_blank" rel="noopener noreferrer" class="mz-btn mz-contact-btn">
