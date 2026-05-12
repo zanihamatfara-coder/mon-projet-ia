@@ -172,86 +172,144 @@
     }
 
     /* =========================
-       À PROPOS PREMIUM
+       ABOUT PREMIUM
     ========================= */
 
-    #about {
-      background: linear-gradient(135deg, #120914 0%, #1f1126 100%);
-      color: #fff;
-      padding: 120px 8%;
-      position: relative;
-      overflow: hidden;
+    .mz-about{
+    padding:140px 8%;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 15% 20%, rgba(255,105,180,0.08), transparent 30%),
+    radial-gradient(circle at 85% 70%, rgba(170,70,255,0.10), transparent 35%),
+    linear-gradient(
+    135deg,
+    #120914 0%,
+    #2b1230 45%,
+    #1a0d1f 100%
+    );
     }
 
-    .mz-about-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 140, 210, 0.2);
-      border-radius: 45px;
-      padding: 70px;
-      max-width: 1100px;
-      margin: 0 auto;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      position: relative;
-      z-index: 2;
+    /* WRAPPER */
+
+    .mz-about-wrapper{
+    max-width:1200px;
+    margin:auto;
+    position:relative;
+    z-index:2;
     }
 
-    .mz-about-card:hover {
-      transform: translateY(-12px);
-      border-color: rgba(255, 140, 210, 0.5);
-      box-shadow: 0 50px 120px rgba(255, 105, 180, 0.15);
+    /* LABEL */
+
+    .mz-section-label{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:6px;
+    color:#ff8fc9;
+    margin-bottom:24px;
     }
 
-    .mz-about-glow-line {
-      width: 80px;
-      height: 3px;
-      background: var(--mz-pink);
-      margin-bottom: 45px;
-      box-shadow: 0 0 20px var(--mz-pink);
-      border-radius: 10px;
+    /* TITRE */
+
+    .mz-about-title{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(54px,6vw,100px);
+    line-height:0.95;
+    letter-spacing:-3px;
+    color:white;
+    margin-bottom:30px;
+    transition:all 0.45s ease;
     }
 
-    .mz-about-title {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 6vw, 82px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 40px;
-      color: #fff;
+    /* LIGNE */
+
+    .mz-about-line{
+    width:180px;
+    height:2px;
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #ff8fc9,
+    transparent
+    );
+    margin-bottom:50px;
+    box-shadow:
+    0 0 18px rgba(255,105,180,0.45);
     }
 
-    .mz-about-text {
-      font-family: Arial, sans-serif;
-      font-size: clamp(17px, 1.4vw, 22px);
-      line-height: 1.9;
-      color: rgba(255, 255, 255, 0.82);
-      max-width: 900px;
+    /* CARTE */
+
+    .mz-about-card{
+    max-width:900px;
+    padding:55px;
+    border-radius:34px;
+    background:
+    linear-gradient(
+    180deg,
+    rgba(55,20,70,0.95) 0%,
+    rgba(20,8,30,0.92) 100%
+    );
+    border:1.5px solid rgba(255,120,190,0.38);
+    backdrop-filter:blur(18px);
+    position:relative;
+    overflow:hidden;
+    transition:all 0.45s cubic-bezier(0.23,1,0.32,1);
+    box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 10px 40px rgba(255,20,147,0.16),
+    0 0 80px rgba(170,70,255,0.10);
     }
 
-    .mz-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 45px;
+    /* GLOW */
+
+    .mz-about-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:34px;
+    padding:1px;
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,140,210,0.7),
+    rgba(170,70,255,0.3),
+    transparent 70%
+    );
+    -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
     }
 
-    .mz-tags span {
-      padding: 12px 22px;
-      border-radius: 999px;
-      background: rgba(242, 154, 201, 0.15);
-      color: #ff9ed1;
-      font-weight: 800;
-      font-size: 14px;
-      border: 1px solid rgba(242, 154, 201, 0.3);
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease;
+    /* TEXTES */
+
+    .mz-about-card p{
+    font-family:Arial,sans-serif;
+    font-size:18px;
+    line-height:2;
+    color:rgba(255,255,255,0.78);
+    margin-bottom:26px;
     }
 
-    .mz-tags span:hover {
-      background: rgba(242, 154, 201, 0.25);
-      transform: scale(1.05);
+    /* HOVER */
+
+    .mz-about-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(255,140,210,0.8);
+    box-shadow:
+    0 0 25px rgba(255,105,180,0.28),
+    0 20px 60px rgba(255,20,147,0.20),
+    0 0 100px rgba(170,70,255,0.12);
+    }
+
+    .mz-about:hover .mz-about-title{
+    transform:scale(1.015);
+    text-shadow:
+    0 0 30px rgba(255,105,180,0.12);
     }
 
     /* =========================
@@ -484,14 +542,17 @@
       width:100%;
       }
 
-      .mz-about-card {
-        padding: 40px 25px;
-        border-radius: 30px;
+      .mz-about{
+      padding:90px 6%;
       }
 
-      .mz-about-title {
-        font-size: 38px;
-        margin-bottom: 25px;
+      .mz-about-card{
+      padding:36px;
+      }
+
+      .mz-about-card p{
+      font-size:16px;
+      line-height:1.9;
       }
 
       .mz-grid {
@@ -555,28 +616,48 @@
 
     </div>
 
+    <img src="./logo_mz.png" alt="Logo MZ Design" class="mz-logo-stamp">
+
   </section>
 
   <section class="mz-about" id="about">
-    <div class="mz-about-card">
-      <div class="mz-about-glow-line"></div>
-      
-      <h2 class="mz-about-title">Une vision créative, claire et stratégique.</h2>
 
-      <div class="mz-about-content">
-        <p class="mz-about-text">
-          Je crée des univers web modernes qui mélangent esthétique, structure et intention. 
-          Chaque page est pensée pour mettre en valeur une marque, rassurer ses visiteurs et rendre l’expérience fluide.
+    <div class="mz-about-wrapper">
+
+      <p class="mz-section-label">
+        À PROPOS
+      </p>
+
+      <h2 class="mz-about-title">
+        Une vision créative,<br>
+        moderne et stratégique.
+      </h2>
+
+      <div class="mz-about-line"></div>
+
+      <div class="mz-about-card">
+
+        <p>
+          Future intégratrice CMS et technicienne systèmes réseaux,
+          je fusionne la créativité du web et la rigueur de l’infrastructure.
         </p>
 
-        <div class="mz-tags">
-          <span>Sites vitrines</span>
-          <span>Identité visuelle</span>
-          <span>Design responsive</span>
-          <span>Stratégie digitale</span>
-        </div>
+        <p>
+          Mon approche repose sur l’élégance visuelle,
+          l’expérience utilisateur et des interfaces pensées
+          pour valoriser une identité de marque forte.
+        </p>
+
+        <p>
+          Entre développement web, design et environnement technique,
+          je construis des expériences digitales modernes,
+          immersives et professionnelles.
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
   <section class="mz-section" id="competences">
@@ -630,7 +711,7 @@
         <span>03</span>
         <h3>Développement App iOS</h3>
         <p>
-          Création d’applications iOS modernes avec Swift,
+          Création d’applications iOS modernes with Swift,
           pensées pour une expérience fluide et intuitive.
         </p>
       </div>
